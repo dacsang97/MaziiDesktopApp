@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace App.DTO
 {
-    class Kanas
+    class Kana
     {
         private int iD;
         private string example;
@@ -15,12 +15,12 @@ namespace App.DTO
         private string kata;
         private string romaji;
 
-        public Kanas()
+        public Kana()
         {
 
         }
 
-        public Kanas(DataRow row)
+        public Kana(DataRow row)
         {
             ID = (int)row["id"];
             Example = row["example"].ToString();

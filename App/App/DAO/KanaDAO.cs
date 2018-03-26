@@ -9,19 +9,19 @@ using App.DTO;
 
 namespace App.DAO
 {
-    class KanasDAO
+    class KanaDAO
     {
-        private static KanasDAO instance;
-        public KanasDAO()
+        private static KanaDAO instance;
+        public KanaDAO()
         {
 
         }
 
-        internal static KanasDAO Instance
+        internal static KanaDAO Instance
         {
             get
             {
-                if (instance == null) instance = new KanasDAO();
+                if (instance == null) instance = new KanaDAO();
                 return instance;
             }
 
@@ -31,13 +31,13 @@ namespace App.DAO
             }
         }
 
-        public List<Kanas> GetKana()
+        public List<Kana> GetKana()
         {
-            List<Kanas> kanasList = new List<Kanas>();
+            List<Kana> kanasList = new List<Kana>();
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from Kanas");
             foreach (DataRow item in data.Rows)
             {
-                Kanas emp = new Kanas(item);
+                Kana emp = new Kana(item);
                 kanasList.Add(emp);
             }
 
