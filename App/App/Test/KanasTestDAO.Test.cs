@@ -18,9 +18,9 @@ namespace App.Test
         [Test]
         public void TestGetKana()
         {
-            List<Kanas> kana = KanasDAO.Instance.getKana();
-
-            Assert.AreEqual(1, 1);
+            List<Kanas> kana = KanasDAO.Instance.GetKana();
+            Console.WriteLine(kana[5].Romaji);
+            Assert.AreEqual("ka", kana[5].Romaji);
         }
     }
 }

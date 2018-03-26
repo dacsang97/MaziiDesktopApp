@@ -31,7 +31,7 @@ namespace App.DAO
             }
         }
 
-        static public List<Kanas> GetKana()
+        public List<Kanas> GetKana()
         {
             List<Kanas> kanasList = new List<Kanas>();
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from Kanas");
