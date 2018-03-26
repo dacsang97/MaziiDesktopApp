@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using App.DTO;
 
 namespace App.DAO
 {
@@ -30,7 +31,7 @@ namespace App.DAO
             }
         }
 
-        public List<Kanas> GetAllKanas()
+        static public List<Kanas> GetKana()
         {
             List<Kanas> kanasList = new List<Kanas>();
             DataTable data = DataProvider.Instance.ExecuteQuery("select * from Kanas");
@@ -42,5 +43,6 @@ namespace App.DAO
 
             return kanasList;
         }
+
     }
 }
