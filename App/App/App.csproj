@@ -111,6 +111,7 @@
     <Compile Include="Bridges\Bridge.cs" />
     <Compile Include="Bridges\BridgeMediator.cs" />
     <Compile Include="Bridges\DialogBridge.cs" />
+    <Compile Include="Bridges\PhraseBridge.cs" />
     <Compile Include="Bridges\StudentBridge.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\PhraseDAO.cs" />

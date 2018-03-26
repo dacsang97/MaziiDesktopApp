@@ -10,10 +10,9 @@ namespace App.Bridges
 {
     class PhraseBridge
     {
-        public List<Phrase> GetAllStudent(int catID)
+        public List<Phrase> GetPhrasesByCatID(int catID)
         {
-            List<Phrase> result = PhraseDAO.Instance.GetPhrasesByCatID(catID);
-            return result;
+            return PhraseDAO.Instance.GetPhrasesByCatID(catID);
         }
     }
 }
