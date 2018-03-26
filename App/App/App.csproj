@@ -111,8 +111,11 @@
     <Compile Include="Bridges\Bridge.cs" />
     <Compile Include="Bridges\BridgeMediator.cs" />
     <Compile Include="Bridges\DialogBridge.cs" />
+    <Compile Include="Bridges\PhraseBridge.cs" />
     <Compile Include="Bridges\StudentBridge.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\PhraseDAO.cs" />
+    <Compile Include="DTO\Phrase.cs" />
     <Compile Include="DAO\KanaDAO.cs" />
     <Compile Include="DAO\LessonDAO.cs" />
     <Compile Include="DAO\StudentDAO.cs" />
@@ -135,6 +138,7 @@
     <Compile Include="ReactHost.Designer.cs">
       <DependentUpon>ReactHost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\PhrasesTestDAO.Test.cs" />
     <Compile Include="Test\KanasTestDAO.Test.cs" />
     <Compile Include="Test\LessonsTestDAO.Test.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -160,11 +164,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Test\KotobaTestDAO.Test.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

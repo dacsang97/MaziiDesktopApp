@@ -14,6 +14,7 @@ namespace App.Bridges
             {
                 new DialogBridge(),
                 new StudentBridge(),
+                new PhraseBridge(),
             };
         }
     }
