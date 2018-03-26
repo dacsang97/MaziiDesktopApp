@@ -3,6 +3,9 @@ import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 import * as RoutesModule from './routes';
+
+import './index.css';
+
 import { AppContainer } from 'react-hot-loader';
 import { withMaterialUI } from './components/shared/MUI/withMUI';
 

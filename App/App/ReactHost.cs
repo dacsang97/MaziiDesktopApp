@@ -29,20 +29,12 @@ namespace App
                 Dock = DockStyle.Fill
             };
 
-            _browser.FrameLoadEnd += OnBrowserFrameLoadEnd;
             _browser.IsBrowserInitializedChanged += _browser_IsBrowserInitializedChanged;
 
-            //_browser.LoadingStateChanged += Browser_LoadingStateChanged;
             _browser.ContextMenu = null;
 
             _browser.RegisterAsyncJsObject("bridgeMediator", new BridgeMediator(_browser, bridges));
 
-            //foreach (var bridge in bridges)
-            //{
-            //	_browser.RegisterAsyncJsObject(bridge.GetType().Name, bridge);
-            //}
-
-            //_browser.AddressChanged += _browser_AddressChanged;
 
             //_browser.LifeSpanHandler = new LifeSpanHandler();
 
@@ -52,17 +44,6 @@ namespace App
             _browser.Load(url);
         }
 
-        private void OnBrowserFrameLoadEnd(object sender, FrameLoadEndEventArgs args)
-        {
-            if (args.Frame.IsMain)
-            {
-                args
-                    .Browser
-                    .MainFrame
-                    .ExecuteJavaScriptAsync(
-                    "document.body.style.overflow = 'hidden'");
-            }
-        }
 
         private void _browser_IsBrowserInitializedChanged(object sender, IsBrowserInitializedChangedEventArgs e)
         {
