@@ -46,7 +46,7 @@ create table Kanjies(
 	lesson int,
 )
 
-create table Pharses(
+create table Phrases(
 	id int identity(1,1) not null primary key,
 	category_id int,
 	japanese ntext,
