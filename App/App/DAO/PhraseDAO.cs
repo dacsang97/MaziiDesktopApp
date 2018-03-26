@@ -33,7 +33,7 @@ namespace App.DAO
 
         public List<Phrase> GetPhrasesByCatID(int catID)
         {
-            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Phrases where Category = @param", new object[] { catID });
+            DataTable dt = DataProvider.Instance.ExecuteQuery("select * from Phrases where category_id = @param ", new object[] { catID });
             List<Phrase> list = new List<Phrase>();
             foreach(DataRow dr in dt.Rows)
             {
