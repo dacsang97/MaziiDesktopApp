@@ -30,7 +30,7 @@ namespace App.DAO
 
         private DataProvider()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PRJC"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["MaziiDB"].ConnectionString;
         }
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
