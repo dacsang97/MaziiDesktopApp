@@ -11,15 +11,13 @@ const Container = styled.div`
 `;
 
 const RouteWrapper = () => (
-  <Container>
-    <Grid container={true} spacing={24}>
-      <Grid item={true} xs={12}>
-        <ButtonAppBar />
-        <Route exact={true} path="/" component={Home} />
-        <Route path="/login" component={Login} />
-      </Grid>
+  <Grid container={true}>
+    <Grid item={true} xs={12}>
+      <ButtonAppBar />
+      <Route exact={true} path="/" component={Home} />
+      <Route path="/login" component={Login} />
     </Grid>
-  </Container>
+  </Grid>
 );
 
 export const routes = RouteWrapper;
