@@ -18,7 +18,7 @@ namespace App.Test
         [Test]
         public void TestGetKana()
         {
-            List<Kanas> kana = KanasDAO.Instance.GetKana();
+            List<Kana> kana = KanaDAO.Instance.GetKana();
             Assert.AreEqual(107, kana.Count);
         }
     }
