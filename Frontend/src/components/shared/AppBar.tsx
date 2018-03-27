@@ -21,19 +21,7 @@ const styles = theme => ({
   } as React.CSSProperties,
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    }),
     minHeight: 48
-  } as React.CSSProperties,
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    })
   } as React.CSSProperties,
   flex: {
     flex: 1
@@ -65,22 +53,12 @@ class ButtonAppBar extends React.PureComponent<Props> {
   render() {
     const { classes, value } = this.props;
     return (
-      <AppBar
-        position="fixed"
-        color="default"
-        className={classNames(
-          classes.appBar,
-          this.props.open && classes.appBarShift
-        )}
-      >
+      <AppBar position="fixed" color="default" className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="Menu"
-            className={classNames(
-              classes.menuButton,
-              this.props.open && classes.hide
-            )}
+            className={classNames(classes.menuButton)}
             onClick={this.handleDrawerOpen}
           >
             <MenuIcon />

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
-import { Kana } from './pages/Kana';
+import Kana from './pages/Kana';
 import { Kotoba } from './pages/Kotoba';
 import { KanjiBasic } from './pages/KanjiBasic';
 import { KanjiAdvance } from './pages/KanjiAdvance';

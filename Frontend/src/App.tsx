@@ -8,7 +8,7 @@ import MiniDrawer from './components/shared/MiniDrawer';
 import { BrowserRouter, Redirect } from 'react-router-dom';
 import { routes as Routes } from './routes';
 import { withStyles } from 'material-ui/styles';
-import { Kana } from './pages/Kana';
+import Kana from './pages/Kana';
 import { Kotoba } from './pages/Kotoba';
 import { KanjiBasic } from './pages/KanjiBasic';
 import { KanjiAdvance } from './pages/KanjiAdvance';
@@ -36,8 +36,7 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3,
-    marginLeft: 72
+    padding: theme.spacing.unit * 3
   } as React.CSSProperties,
   contentDrawerOpen: {
     marginLeft: 240
@@ -80,17 +79,7 @@ class App extends React.PureComponent<any, any> {
           value={value}
           handleChangeTab={this.handleChangeTab}
         />
-        <MiniDrawer
-          open={open}
-          handleOpen={this.handleDrawerOpen}
-          handleClose={this.handelDrawerClose}
-        />
-        <main
-          className={classNames(
-            classes.content,
-            open && classes.contentDrawerOpen
-          )}
-        >
+        <main className={classes.content}>
           <div className={classes.toolbar} />
           {value === 0 && <Kana />}
           {value === 1 && <Kotoba />}

@@ -1,6 +1,7 @@
 import { Bridge } from './bridge-manage';
 import Student from '../types/Student';
 import { Phrase } from '../types/Phrase';
+import { Kana } from '../types/Kana';
 
 export interface FileBridge extends Bridge {
   // Here you would mirror your C# interface
@@ -20,4 +21,8 @@ export interface StudentBridge extends Bridge {
 
 export interface PhraseBridge extends Bridge {
   getPhrasesByCatID(id: number): Promise<Phrase[]>;
+}
+
+export interface KanaBridge extends Bridge {
+  getKana(): Promise<Kana[]>;
 }

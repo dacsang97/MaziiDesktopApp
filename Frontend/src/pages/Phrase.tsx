@@ -20,7 +20,6 @@ export class Phrase extends React.PureComponent<any, State> {
   };
   constructor(props) {
     super(props);
-    console.log(BridgeManager);
   }
   async componentDidMount() {
     this._phraseBridge = await BridgeManager.getBridge<PhraseBridge>(
