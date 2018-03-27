@@ -10,9 +10,9 @@ namespace App.Bridges
 {
     class PhraseBridge
     {
-        public List<Phrase> GetPhrasesByCatID(int catID)
+        public List<Phrase> GetPhrasesByCatID(Int64 catID)
         {
-            return PhraseDAO.Instance.GetPhrasesByCatID(catID);
+            return PhraseDAO.Instance.GetPhrasesByCatID(Convert.ToInt32(catID));
         }
     }
 }

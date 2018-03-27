@@ -72,9 +72,7 @@ class App extends React.PureComponent<any, any> {
     const { open, value } = this.state;
     const { classes } = this.props;
     return (
-      <div
-        className={classNames(classes.root, open && classes.contentDrawerOpen)}
-      >
+      <div className={classes.root}>
         <CssBaseline />
         <ButtonAppBar
           open={open}
@@ -87,7 +85,12 @@ class App extends React.PureComponent<any, any> {
           handleOpen={this.handleDrawerOpen}
           handleClose={this.handelDrawerClose}
         />
-        <main className={classes.content}>
+        <main
+          className={classNames(
+            classes.content,
+            open && classes.contentDrawerOpen
+          )}
+        >
           <div className={classes.toolbar} />
           {value === 0 && <Kana />}
           {value === 1 && <Kotoba />}
