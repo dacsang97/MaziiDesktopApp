@@ -10,14 +10,14 @@ namespace App.Bridges
 {
     class KanjiBridge
     {
-        public List<Kanji> GetKanjies(int lesson)
+        public List<Kanji> GetKanjies(Int64 lesson)
         {
-            return KanjiDAO.Instance.GetKanjies(lesson);
+            return KanjiDAO.Instance.GetKanjies(Convert.ToInt32(lesson));
         }
 
-        public List<Kanji> GetKanjies(int from, int to)
+        public List<Kanji> GetKanjies(Int64 from, Int64 to)
         {
-            return KanjiDAO.Instance.GetKanjies(from, to);
+            return KanjiDAO.Instance.GetKanjies(Convert.ToInt32(from), Convert.ToInt32(to));
         }
     }
 }
