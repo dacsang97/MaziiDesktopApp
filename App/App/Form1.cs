@@ -17,7 +17,7 @@ namespace App
         {
             InitializeComponent();
 
-            Text = "React Windows App";
+            Text = "Mazii Desktop App";
 
             // Enabling this during devlopment can be a nice thing: this.TopMost = true;
 
