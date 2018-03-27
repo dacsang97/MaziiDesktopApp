@@ -141,8 +141,8 @@
     <Compile Include="ReactHost.Designer.cs">
       <DependentUpon>ReactHost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Test\KanaTestDAO.Test.cs" />
     <Compile Include="Test\PhrasesTestDAO.Test.cs" />
-    <Compile Include="Test\KanasTestDAO.Test.cs" />
     <Compile Include="Test\LessonsTestDAO.Test.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -167,8 +167,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Test\KotobaTestDAO.Test.cs" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
