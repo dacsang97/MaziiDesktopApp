@@ -7,6 +7,7 @@ import SendIcon from 'material-ui-icons/Send';
 import MailIcon from 'material-ui-icons/Mail';
 import DeleteIcon from 'material-ui-icons/Delete';
 import ReportIcon from 'material-ui-icons/Report';
+import Tooltip from 'material-ui/Tooltip';
 
 export const menuListItems = (
   <div>
@@ -14,7 +15,6 @@ export const menuListItems = (
       <ListItemIcon>
         <InboxIcon />
       </ListItemIcon>
-      <ListItemText primary="Bảng chữ cái" />
     </ListItem>
     <ListItem button={true}>
       <ListItemIcon>
@@ -33,12 +33,6 @@ export const menuListItems = (
         <DraftsIcon />
       </ListItemIcon>
       <ListItemText primary="1945 từ Kanji nâng cao" />
-    </ListItem>
-    <ListItem button={true}>
-      <ListItemIcon>
-        <DraftsIcon />
-      </ListItemIcon>
-      <ListItemText primary="1000 mẫu câu giao tiếp" />
     </ListItem>
   </div>
 );
