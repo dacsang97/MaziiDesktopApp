@@ -10,30 +10,13 @@ namespace App.DTO
     class Kotoba
     {
         private int iD;
-        private string cn_Mean;
+        private string cnMean;
         private string hiragana;
         private string kanji;
         private string mean;
-        private string mean_Unsigned;
+        private string meanUnsigned;
         private string roumaji;
-        private int lesson_Id;
-
-        public Kotoba()
-        {
-
-        }
-
-        public Kotoba(DataRow row)
-        {
-            ID = (int)row["id"];
-            Cn_Mean = row["cn_mean"].ToString();
-            Hiragana = row["hiragana"].ToString();
-            Kanji = row["kanji"].ToString();
-            Mean = row["mean"].ToString();
-            Mean_Unsigned = row["mean_unsigned"].ToString();
-            Roumaji = row["roumaji"].ToString();
-            Lesson_Id = (int)row["lesson_id"];
-        }
+        private int lessonId;
 
         public int ID
         {
@@ -48,6 +31,18 @@ namespace App.DTO
             }
         }
 
+        public string CnMean
+        {
+            get
+            {
+                return cnMean;
+            }
+
+            set
+            {
+                cnMean = value;
+            }
+        }
 
         public string Hiragana
         {
@@ -88,6 +83,19 @@ namespace App.DTO
             }
         }
 
+        public string MeanUnsigned
+        {
+            get
+            {
+                return meanUnsigned;
+            }
+
+            set
+            {
+                meanUnsigned = value;
+            }
+        }
+
         public string Roumaji
         {
             get
@@ -101,43 +109,36 @@ namespace App.DTO
             }
         }
 
-        public string Cn_Mean
+        public int LessonId
         {
             get
             {
-                return cn_Mean;
+                return lessonId;
             }
 
             set
             {
-                cn_Mean = value;
+                lessonId = value;
             }
         }
 
-        public string Mean_Unsigned
+        public Kotoba()
         {
-            get
-            {
-                return mean_Unsigned;
-            }
 
-            set
-            {
-                mean_Unsigned = value;
-            }
         }
 
-        public int Lesson_Id
+        public Kotoba(DataRow row)
         {
-            get
-            {
-                return lesson_Id;
-            }
-
-            set
-            {
-                lesson_Id = value;
-            }
+            ID = (int)row["id"];
+            CnMean = row["cn_mean"].ToString();
+            Hiragana = row["hiragana"].ToString();
+            Kanji = row["kanji"].ToString();
+            Mean = row["mean"].ToString();
+            MeanUnsigned = row["mean_unsigned"].ToString();
+            Roumaji = row["roumaji"].ToString();
+            LessonId = (int)row["lesson_id"];
         }
+
+        
     }
 }
