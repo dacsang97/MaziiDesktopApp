@@ -10,9 +10,9 @@ namespace App.Bridges
 {
     class KotobaBridge
     {
-        public List<Kotoba> GetKotoba(int lessonID)
+        public List<Kotoba> GetKotoba(Int64 lessonID)
         {
-            return KotobasDAO.Instance.GetKotoba(lessonID);
+            return KotobasDAO.Instance.GetKotoba(Convert.ToInt32(lessonID));
         }
     }
 }

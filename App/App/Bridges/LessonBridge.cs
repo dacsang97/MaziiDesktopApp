@@ -10,9 +10,9 @@ namespace App.Bridges
 {
     class LessonBridge
     {
-        public Lesson GetListenLesson(int lessonID)
+        public Lesson GetListenLesson(Int64 lessonID)
         {
-            return LessonDAO.Instance.GetListenLesson(lessonID);
+            return LessonDAO.Instance.GetListenLesson(Convert.ToInt32(lessonID));
         }
     }
 }
