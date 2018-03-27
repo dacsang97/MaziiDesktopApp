@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
+import Tabs, { Tab } from 'material-ui/Tabs';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
@@ -23,7 +24,8 @@ const styles = theme => ({
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
-    })
+    }),
+    minHeight: 48
   } as React.CSSProperties,
   appBarShift: {
     marginLeft: drawerWidth,
@@ -45,32 +47,26 @@ const styles = theme => ({
 interface Props {
   classes?: any;
   handleOpen: Function;
+  handleChangeTab: Function;
   open: boolean;
-}
-
-interface State {
   value: number;
 }
 
-class ButtonAppBar extends React.PureComponent<Props, State> {
+class ButtonAppBar extends React.PureComponent<Props> {
   constructor(props) {
     super(props);
-    this.state = {
-      value: 0
-    };
   }
   handleChange = (event, value) => {
-    this.setState({ value });
+    this.props.handleChangeTab(value);
   };
   handleDrawerOpen = () => {
     this.props.handleOpen();
   };
   render() {
-    const { classes } = this.props;
-    const { value } = this.state;
+    const { classes, value } = this.props;
     return (
       <AppBar
-        position="absolute"
+        position="fixed"
         color="default"
         className={classNames(
           classes.appBar,
@@ -89,6 +85,18 @@ class ButtonAppBar extends React.PureComponent<Props, State> {
           >
             <MenuIcon />
           </IconButton>
+          <Tabs
+            value={value}
+            onChange={this.handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+          >
+            <Tab label="Bảng chữ cái" />
+            <Tab label="50 bài Minna" />
+            <Tab label="512 từ Kanji cơ bản" />
+            <Tab label="1945 từ Kanji nâng cao" />
+            <Tab label="1000 mẫu câu giao tiếp" />
+          </Tabs>
         </Toolbar>
       </AppBar>
     );

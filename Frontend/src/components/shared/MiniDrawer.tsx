@@ -11,7 +11,7 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
 import ChevronRightIcon from 'material-ui-icons/ChevronRight';
-import { menuListItems } from './tileData';
+import { menuListItems, otherMailFolderListItems } from './tileData';
 
 const drawerWidth = 240;
 
@@ -39,7 +39,7 @@ const styles = theme => ({
     display: 'none'
   } as React.CSSProperties,
   drawerPaper: {
-    position: 'relative',
+    position: 'fixed',
     width: drawerWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
@@ -110,6 +110,9 @@ class MiniDrawer extends React.PureComponent<Prop> {
         </div>
         <Divider />
         <List>{menuListItems}</List>
+        <Divider />
+        <List>{otherMailFolderListItems}</List>
+        <Divider />
       </Drawer>
     );
   }
