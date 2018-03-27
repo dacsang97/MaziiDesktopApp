@@ -15,6 +15,9 @@ namespace App.Bridges
                 new DialogBridge(),
                 new StudentBridge(),
                 new PhraseBridge(),
+                new KanaBridge(),
+                new KotobaBridge(),
+                new LessonBridge(),
                 new KanjiBridge(),
             };
         }
