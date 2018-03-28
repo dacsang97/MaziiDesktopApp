@@ -29,7 +29,7 @@ namespace App
 #if DEBUG
             url = "http://localhost:3000";
 
-            if (MessageBox.Show("You are currently in debug mode.\n\nMake sure to start your UI at localhost:3000 by running the command \"npm start\" in the RwdReactUI folder.\n\nDo you also want to open the developer console?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to open the developer console?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 showDeveloperConsole = true;
             };

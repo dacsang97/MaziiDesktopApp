@@ -3,6 +3,7 @@ import Student from '../types/Student';
 import { Phrase } from '../types/Phrase';
 import { Kana } from '../types/Kana';
 import { Kotoba } from '../types/Kotoba';
+import { Kanji } from '../types/Kanji';
 
 export interface FileBridge extends Bridge {
   // Here you would mirror your C# interface
@@ -30,4 +31,9 @@ export interface KanaBridge extends Bridge {
 
 export interface KotobaBridge extends Bridge {
   getKotoba(id: number): Promise<Kotoba[]>;
+}
+
+export interface KanjiBridge extends Bridge {
+  getKanjiesById(id: number): Promise<Kanji[]>;
+  getKanjiesByScope(from: number, to: number): Promise<Kanji[]>;
 }

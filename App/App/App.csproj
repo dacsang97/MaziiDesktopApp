@@ -112,6 +112,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bridges\AudioBridge.cs" />
     <Compile Include="Bridges\Bridge.cs" />
     <Compile Include="Bridges\BridgeMediator.cs" />
     <Compile Include="Bridges\DialogBridge.cs" />

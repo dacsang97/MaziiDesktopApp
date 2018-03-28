@@ -15,15 +15,5 @@ namespace App.Bridges
         {
             return PhraseDAO.Instance.GetPhrasesByCatID(Convert.ToInt32(catID));
         }
-
-        public void PlayPhraseAudio(string url)
-        {
-            using (var mf = new MediaFoundationReader(url))
-            using (var wo = new WaveOutEvent())
-            {
-                wo.Init(mf);
-                wo.Play();
-            }
-        }
     }
 }

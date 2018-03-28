@@ -19,6 +19,7 @@ namespace App.Bridges
                 new KotobaBridge(),
                 new LessonBridge(),
                 new KanjiBridge(),
+                new AudioBridge()
             };
         }
     }
