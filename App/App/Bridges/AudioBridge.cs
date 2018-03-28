@@ -12,6 +12,7 @@ namespace App.Bridges
     {
         public void PlayAudio(string url)
         {
+            Console.WriteLine(url);
             using (var mf = new MediaFoundationReader(url))
             using (var wo = new WaveOutEvent())
             {

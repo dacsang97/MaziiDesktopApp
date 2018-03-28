@@ -10,19 +10,16 @@ const styles = (theme: Theme) => ({
   root: {
     flexGrow: 1
   },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightMedium
+  title: {
+    color: theme.palette.primary.dark
   },
-  expansion: {
-    display: 'block'
-  },
-  japanese: {
-    color: theme.palette.primary.light
+  mean: {
+    marginTop: '0.5em',
+    color: theme.palette.grey['600']
   }
 });
 
-type Prop = Kotoba & WithStyles<'root' | 'heading' | 'expansion' | 'japanese'>;
+type Prop = Kotoba & WithStyles<'root' | 'title' | 'mean'>;
 
 class CardContent extends React.PureComponent<Prop> {
   render() {
@@ -30,18 +27,18 @@ class CardContent extends React.PureComponent<Prop> {
     console.log(data);
     return (
       <List component="nav">
-        <ListItem>
-          <ListItemText primary={data.hiragana} />
-        </ListItem>
+        <Typography variant="title" className={classes.title}>
+          {data.hiragana}
+        </Typography>
         {data.kanji !== '' &&
           data.cnMean !== '' && (
-            <ListItem>
-              <ListItemText primary={`${data.kanji}-${data.cnMean}`} />
-            </ListItem>
+            <Typography variant="subheading">
+              {`${data.kanji}-${data.cnMean}`}
+            </Typography>
           )}
-        <ListItem>
-          <ListItemText primary={data.mean} />
-        </ListItem>
+        <Typography variant="subheading" className={classes.mean}>
+          {data.mean}
+        </Typography>
         <Divider />
       </List>
     );

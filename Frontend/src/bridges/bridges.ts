@@ -4,6 +4,7 @@ import { Phrase } from '../types/Phrase';
 import { Kana } from '../types/Kana';
 import { Kotoba } from '../types/Kotoba';
 import { Kanji } from '../types/Kanji';
+import { Lesson } from '../types/Lesson';
 
 export interface FileBridge extends Bridge {
   // Here you would mirror your C# interface
@@ -40,4 +41,8 @@ export interface KanjiBridge extends Bridge {
 
 export interface AudioBridge extends Bridge {
   playAudio(url: string): Promise<any>;
+}
+
+export interface LessonBridge extends Bridge {
+  getListenLesson(id: number): Promise<Lesson>;
 }
