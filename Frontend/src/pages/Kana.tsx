@@ -15,6 +15,7 @@ import classNames from 'classnames';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import chunk from 'lodash/chunk';
+import Loading from '../components/shared/Loading';
 
 const ButtonContainer = styled.div`
   width: 100%;
@@ -84,7 +85,7 @@ class Kana extends React.PureComponent<any, State> {
     const { kanas, currentKana, type } = this.state;
     const { classes } = this.props;
     if (!kanas) {
-      return <h1>Loading</h1>;
+      return <Loading />;
     }
     return (
       <Grid container={true} spacing={8}>

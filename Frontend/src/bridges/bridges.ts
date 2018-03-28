@@ -37,3 +37,7 @@ export interface KanjiBridge extends Bridge {
   getKanjiesById(id: number): Promise<Kanji[]>;
   getKanjiesByScope(from: number, to: number): Promise<Kanji[]>;
 }
+
+export interface AudioBridge extends Bridge {
+  playAudio(url: string): Promise<any>;
+}

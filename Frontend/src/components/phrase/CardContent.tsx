@@ -8,6 +8,10 @@ import ExpansionPanel, {
   ExpansionPanelDetails
 } from 'material-ui/ExpansionPanel';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
+import BridgeManager from '../../bridges/bridge-manage';
+import { AudioBridge } from '../../bridges/bridges';
+import IconButton from 'material-ui/IconButton';
+import VolumeUp from 'material-ui-icons/VolumeUp';
 
 const styles = (theme: Theme) => ({
   root: {
@@ -28,6 +32,15 @@ const styles = (theme: Theme) => ({
 type Prop = Phrase & WithStyles<'root' | 'heading' | 'expansion' | 'japanese'>;
 
 class CardContent extends React.PureComponent<Prop> {
+  _audioBridge: AudioBridge;
+  async componentDidMount() {
+    this._audioBridge = await BridgeManager.getBridge<AudioBridge>(
+      'audioBridge'
+    );
+  }
+  handlePlayClicked = (url: string) => {
+    this._audioBridge.playAudio(url);
+  };
   render() {
     const { classes, ...data } = this.props;
     return (
@@ -42,7 +55,19 @@ class CardContent extends React.PureComponent<Prop> {
             {data.japanese}
           </Typography>
           <br />
-          <Typography>{data.pinyin}</Typography>
+          <Typography>
+            {data.pinyin}
+            {''}
+            <IconButton
+              onClick={() => {
+                this.handlePlayClicked(
+                  `http://mina.mazii.net/db/phrase/${data.voice}.mp3`
+                );
+              }}
+            >
+              <VolumeUp />
+            </IconButton>
+          </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     );
